@@ -9,7 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BootaCAM">
+<<<<<<< Updated upstream
         <activity android:name="com.capstone.bootacam.MainActivity">
+=======
+
+        <activity android:name=".activity_side_menu">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name=".activity_login"
+            android:exported="true" />
+        <activity android:name=".activity_camList" />
+
+        <activity android:name=".MainActivity">
+>>>>>>> Stashed changes
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
