@@ -14,9 +14,9 @@ class activity_login2 : AppCompatActivity() {
         setContentView(R.layout.activity_login2)
 
 
-        val kakao_logout_button = findViewById<Button>(R.id.kakao_logout_button) // 로그인 버튼
+        val kakaoLogoutButton = findViewById<Button>(R.id.kakaoLogoutButton) // 로그인 버튼
 
-        kakao_logout_button.setOnClickListener {
+        kakaoLogoutButton.setOnClickListener {
             UserApiClient.instance.logout { error ->
                 if (error != null) {
                     Toast.makeText(this, "로그아웃 실패 $error", Toast.LENGTH_SHORT).show()

@@ -42,8 +42,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // 구글 로그인 버튼
-        val google_Login_Button : com.google.android.gms.common.SignInButton = findViewById(R.id.google_Login_Button)
-        google_Login_Button.setOnClickListener{signIn()} // 구글 로그인 버튼을 클릭 했을 때 구글 계정 인증 Activity가 보여짐
+        val googleLoginButton : com.google.android.gms.common.SignInButton = findViewById(R.id.googleLoginButton)
+        googleLoginButton.setOnClickListener{signIn()} // 구글 로그인 버튼을 클릭 했을 때 구글 계정 인증 Activity가 보여짐
         // 구글 로그인 옵션 구성 requestIdToken 및 Email 요청
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN) // 구글 로그인을 통해 앱에서 사용자의 데이터 요청
             .requestIdToken("940911197771-8tpmllrgm1o0feb1ab74499acnkjas87.apps.googleusercontent.com")
@@ -148,10 +148,10 @@ class MainActivity : AppCompatActivity() {
 
 
         // 카카오 로그인
-        val kakao_Login_Button = findViewById<ImageButton>(R.id.kakao_Login_Button) // 로그인 버튼
+        val kakaoLoginButton = findViewById<ImageButton>(R.id.kakaoLoginButton) // 로그인 버튼
 
         // isKakaoTaliLoginAvailable() API로 사용자 기기에 카카오톡이 설치외어 있음을 확인하고, 카카오톡 로그인 API인 loginWithKakaoTali() 호출
-        kakao_Login_Button.setOnClickListener {
+        kakaoLoginButton.setOnClickListener {
             if(LoginClient.instance.isKakaoTalkLoginAvailable(this)){
                 LoginClient.instance.loginWithKakaoTalk(this, callback = callback)
 
