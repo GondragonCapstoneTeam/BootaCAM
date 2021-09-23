@@ -7,6 +7,7 @@
     tools:context=".activity_camList"
     android:orientation="horizontal">
 
+
     <Button
         android:layout_width="100dp"
         android:layout_height="100dp"
