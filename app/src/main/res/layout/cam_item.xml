@@ -11,36 +11,34 @@
         android:layout_height="45dp"
         android:orientation="horizontal">
 
-        <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
 
-            <ImageView
-                android:onClick="addSetOnClickListener"
-                android:id="@+id/recStatus"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/recstop"
-                android:padding="3dp"/>
-
-
-
-
-
-        </FrameLayout>
-
+        <ImageView
+            android:id="@+id/recState"
+            android:layout_width="40dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:padding="3dp"
+            android:src="@drawable/recstop" />
 
 
         <TextView
             android:id="@+id/cam_name"
-            android:layout_marginLeft="6dp"
-            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="300dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="6dp"
+            android:gravity="left"
+            android:paddingTop="6dp"
             android:text="우아아앙아"
-            android:gravity="center"
             android:textColor="#ffffff"
             android:textSize="25dp" />
 
+        <ImageView
+            android:id="@+id/cam_setting"
+            android:layout_weight="1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/setting" />
 
 
     </LinearLayout>
@@ -48,7 +46,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#ffffff"/>
+        android:background="#ffffff" />
 
 
 </LinearLayout>
