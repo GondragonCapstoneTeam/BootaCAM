@@ -1,12 +1,9 @@
 package com.capstone.bootacam
 
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -23,9 +20,9 @@ class activity_side_menu : AppCompatActivity(),NavigationView.OnNavigationItemSe
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_side_menu)
 
-        toolbar=findViewById(R.id.toolbar)
-        drawerLayout = findViewById(R.id.side_menu)
-        navigationView = findViewById(R.id.nav_view)
+        toolbar=findViewById(R.id.ToolbarInAppbar)
+        drawerLayout = findViewById(R.id.SideMenu)
+        navigationView = findViewById(R.id.NaviView)
         navigationView.setNavigationItemSelectedListener(this@activity_side_menu)
 
         // 만든 툴바를 액션바로 설정 및 액션바 기본 셋팅
@@ -37,17 +34,17 @@ class activity_side_menu : AppCompatActivity(),NavigationView.OnNavigationItemSe
         val headerview: View = navigationView.getHeaderView(0);
 
         // header에 있는 리소스 가져오기
-        val user_name: TextView = headerview.findViewById(R.id.user_name);
-        val user_account: TextView = headerview.findViewById(R.id.user_account);
-        user_name.setText("xxxxx");
-        user_account.setText("ff");
+        val userName: TextView = headerview.findViewById(R.id.UserName);
+        val userAccount: TextView = headerview.findViewById(R.id.UserAccount);
+        userName.setText("xxxxx");
+        userAccount.setText("ff");
 
         // 터지 영역 지정
-        val touch_area: DrawerLayout=findViewById(R.id.side_menu);
+        val touchArea: DrawerLayout=findViewById(R.id.SideMenu);
 
         //사이드 메뉴가 열려있는 상태일 때
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            touch_area.setOnTouchListener { _: View, event: MotionEvent ->
+            touchArea.setOnTouchListener { _: View, event: MotionEvent ->
                 when (event.action) {
                     //지정된 영역에 화면 터치가 감지되면
                     MotionEvent.ACTION_DOWN -> {
@@ -75,7 +72,7 @@ class activity_side_menu : AppCompatActivity(),NavigationView.OnNavigationItemSe
         //특정 메뉴가 선택 될 때
         when(item.itemId) {
             // menu_tab 선택 시 사이드 메뉴 열림
-            R.id.menu_tab -> {
+            R.id.MenuTab -> {
                drawerLayout.openDrawer(GravityCompat.END)
             }
         }
@@ -86,9 +83,7 @@ class activity_side_menu : AppCompatActivity(),NavigationView.OnNavigationItemSe
     //네비게이션 속 아이템 선택 메소드
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.account->Toast.makeText(this,"account 실행",Toast.LENGTH_SHORT).show()
-            R.id.setting->Toast.makeText(this,"setting 실행",Toast.LENGTH_SHORT).show()
-            R.id.logout->Toast.makeText(this,"logout 실행",Toast.LENGTH_SHORT).show()
+
         }
         return true
     }
