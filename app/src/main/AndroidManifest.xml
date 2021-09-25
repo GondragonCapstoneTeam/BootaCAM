@@ -14,9 +14,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BootaCAM">
 
-
-
-
         <activity android:name=".activity_side_menu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
