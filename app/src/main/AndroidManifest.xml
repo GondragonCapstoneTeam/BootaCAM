@@ -9,7 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BootaCAM">
+        <activity android:name=".basic_activity">
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+
+        </activity>
+        <activity android:name=".storedvideo_activity"></activity>
+        <activity
+            android:name=".camera_activity"
+            android:label="@string/title_activity_camera"
+            android:theme="@style/Theme.BootaCAM.NoActionBar" />
         <activity android:name=".Side_menu">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,13 +31,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
         <activity
             android:name=".activity_login"
             android:exported="true" />
         <activity android:name=".activity_camList" />
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
