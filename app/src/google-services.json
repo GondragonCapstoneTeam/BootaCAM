@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "940911197771",
+    "project_id": "bootacam-de0a2",
+    "storage_bucket": "bootacam-de0a2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:940911197771:android:35027ac15964f6a8c697ce",
+        "android_client_info": {
+          "package_name": "com.capstone.bootacam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "940911197771-etrsb4n0o0210erc4mtfhlj6a949cgr0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.capstone.bootacam",
+            "certificate_hash": "9d82de65c433218740e67ffa3bce7d372e497e05"
+          }
+        },
+        {
+          "client_id": "940911197771-8tpmllrgm1o0feb1ab74499acnkjas87.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALEOPmtO48dC72z1o9iYnHb2YStaEMMSk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "940911197771-8tpmllrgm1o0feb1ab74499acnkjas87.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
