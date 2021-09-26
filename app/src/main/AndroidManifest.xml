@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.capstone.bootacam">
-
-    <!--인터넷 사용 권한 설정-->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- 인터넷 사용 권한 설정 -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".GlobalApplication"
@@ -14,37 +13,32 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BootaCAM">
 
-
-
         <activity android:name=".basic_activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".storedvideo_activity">
-
-        </activity>
-
+        <activity
+            android:name=".sidemenu_baseactivity"
+            android:label="@string/title_activity_sidemenu_baseactivity"
+            android:theme="@style/Theme.BootaCAM.NoActionBar" />
+        <activity android:name=".storedvideo_activity" />
         <activity android:name=".camera_activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
         <activity android:name=".activity_side_menu">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
-
         <activity
             android:name=".activity_login2"
             android:exported="true" />
@@ -54,21 +48,17 @@
             android:value="@string/kakao_app_key" />
 
         <activity android:name=".activity_camList" />
-
-
         <activity android:name=".MainActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
         <activity android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 

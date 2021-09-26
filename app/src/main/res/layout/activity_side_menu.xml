@@ -8,28 +8,26 @@
     android:layout_height="match_parent">
 
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <include
             android:id="@+id/ToolBar"
             layout="@layout/appbar" />
 
-        <LinearLayout
+        <FrameLayout
+            android:id="@+id/activity_content"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/ToolBar"
-            android:orientation="vertical">
+            android:layout_height="match_parent" />
 
-        </LinearLayout>
-    </RelativeLayout>
 
-    <include
-        android:id="@+id/NaviView"
-        layout="@layout/navi" />
+        <include
+            android:id="@+id/NaviView"
+            layout="@layout/navi" />
 
+    </LinearLayout>
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -31,7 +31,7 @@ class storedvideo_activity : AppCompatActivity(),NavigationView.OnNavigationItem
         setSupportActionBar(toolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(false)
         supportActionBar?.setDisplayShowTitleEnabled(false)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
 
         // xml 파일에서 넣어놨던 header 선언
         val headerview: View = navigationView.getHeaderView(0);
@@ -81,10 +81,6 @@ class storedvideo_activity : AppCompatActivity(),NavigationView.OnNavigationItem
                 drawerLayout.openDrawer(GravityCompat.END)
             }
 
-            android.R.id.home -> {
-                finish()
-                return true
-            }
         }
         return super.onOptionsItemSelected(item)
     }

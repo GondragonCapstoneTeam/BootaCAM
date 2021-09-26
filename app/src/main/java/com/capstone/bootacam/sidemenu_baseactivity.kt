@@ -1,21 +1,16 @@
-
 package com.capstone.bootacam
 
-
-
-import android.content.Intent
-import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import android.view.*
-import android.widget.TextView
-import androidx.appcompat.widget.Toolbar;
+import android.widget.*
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 
 
-class basic_activity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class sidemenu_baseactivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener{
 
     lateinit var navigationView: NavigationView
     lateinit var drawerLayout: DrawerLayout
@@ -23,9 +18,20 @@ class basic_activity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_basics)
+        setContentView(R.layout.activity_side_menu)
+    }
+
+    override fun setContentView(layoutResID: Int) {
+
+        val fullView=layoutInflater.inflate(R.layout.activity_side_menu,null)
+        val activityContainer: FrameLayout =fullView.findViewById(R.id.activity_content)
+        layoutInflater.inflate(layoutResID,activityContainer,true)
+
+        super.setContentView(fullView)
 
         toolbar = findViewById(R.id.ToolbarInAppbar)
+        setSupportActionBar(toolbar)
+
         drawerLayout = findViewById(R.id.SideMenu)
         navigationView = findViewById(R.id.NaviView)
 
@@ -36,7 +42,7 @@ class basic_activity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         setSupportActionBar(toolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(false)
         supportActionBar?.setDisplayShowTitleEnabled(false)
-
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         // xml 파일에서 넣어놨던 header 선언
         val headerview: View = navigationView.getHeaderView(0);
@@ -51,19 +57,9 @@ class basic_activity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         val touchArea: DrawerLayout = findViewById(R.id.SideMenu);
 
 
-        val cameraBtn: Button = findViewById(R.id.IntoCameraBtn)
-        val storedVideoBtn: Button = findViewById(R.id.StoredVideoBtn)
-
-
-        // 각 버튼의 화면전환
-        cameraBtn.setOnClickListener {
-            val cameraIntent = Intent(this, camera_activity::class.java)
-            startActivity(cameraIntent)
-        }
-        storedVideoBtn.setOnClickListener {
-            val storedVideoIntent = Intent(this, storedvideo_activity::class.java)
-            startActivity(storedVideoIntent)
-        }
+        //움직임 감지 스위치 및 카메라 onoff 토글 버튼
+        val moveSwitch: Switch = findViewById(R.id.MoveSwitch)
+        val cameraOnOff: ToggleButton = findViewById(R.id.CameraOnOff)
 
 
         //사이드 메뉴가 열려있는 상태일 때
@@ -80,8 +76,6 @@ class basic_activity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
                 true // or false
             }
         }
-
-
     }
 
 
@@ -102,6 +96,10 @@ class basic_activity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
                 drawerLayout.openDrawer(GravityCompat.END)
             }
 
+            android.R.id.home -> {
+                finish()
+                return true
+            }
         }
         return super.onOptionsItemSelected(item)
     }

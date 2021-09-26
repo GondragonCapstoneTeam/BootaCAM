@@ -35,7 +35,7 @@ class camera_activity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         setSupportActionBar(toolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(false)
         supportActionBar?.setDisplayShowTitleEnabled(false)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
 
         // xml 파일에서 넣어놨던 header 선언
         val headerview: View = navigationView.getHeaderView(0);
@@ -84,8 +84,10 @@ class camera_activity : AppCompatActivity(), NavigationView.OnNavigationItemSele
         cameraOnOff.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 Toast.makeText(this, "카메라 ON", Toast.LENGTH_SHORT).show()
+                cameraOnOff.setBackgroundResource(R.drawable.ic_launcher_background)
             } else {
                 Toast.makeText(this, "카메라 OFF", Toast.LENGTH_SHORT).show()
+                cameraOnOff.setBackgroundResource(R.drawable.common_google_signin_btn_icon_dark)
             }
         }
 
@@ -109,10 +111,6 @@ class camera_activity : AppCompatActivity(), NavigationView.OnNavigationItemSele
                 drawerLayout.openDrawer(GravityCompat.END)
             }
 
-            android.R.id.home -> {
-                finish()
-                return true
-            }
         }
         return super.onOptionsItemSelected(item)
     }
