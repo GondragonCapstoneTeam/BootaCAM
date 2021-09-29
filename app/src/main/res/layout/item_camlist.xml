@@ -15,18 +15,18 @@
         <ImageView
             android:id="@+id/recState"
             android:layout_width="40dp"
-            android:layout_weight="1"
             android:layout_height="40dp"
+            android:layout_weight="1"
             android:padding="3dp"
-            android:src="@drawable/recstop" />
+            android:src="@drawable/itemcamlist_recstop_40dp" />
 
 
         <TextView
-            android:id="@+id/cam_name"
-            android:layout_weight="1"
+            android:id="@+id/camName"
             android:layout_width="300dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="6dp"
+            android:layout_weight="1"
             android:gravity="left"
             android:paddingTop="6dp"
             android:text="우아아앙아"
@@ -34,11 +34,11 @@
             android:textSize="25dp" />
 
         <ImageView
-            android:id="@+id/cam_setting"
-            android:layout_weight="1"
+            android:id="@+id/camSetting"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/setting" />
+            android:layout_weight="1"
+            android:src="@drawable/itemcamlist_setting_40dp" />
 
 
     </LinearLayout>

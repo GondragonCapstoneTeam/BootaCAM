@@ -22,14 +22,14 @@
 
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/add_fab"
+            android:id="@+id/addFab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="270dp"
             android:backgroundTint="#FFDD87"
-            android:src="@drawable/fab_add"
-            app:borderWidth="0dp"/>
+            android:src="@drawable/camlist_add_40dp"
+            app:borderWidth="0dp" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -38,7 +38,7 @@
             android:scrollbars="vertical">
 
             <LinearLayout
-                android:id="@+id/mycam_list_container"
+                android:id="@+id/mycamListContainer"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical" />

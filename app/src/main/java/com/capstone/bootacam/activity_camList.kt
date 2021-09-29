@@ -15,13 +15,13 @@ class activity_camList : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_camlist)
 
-        val add_fab: com.google.android.material.floatingactionbutton.FloatingActionButton =
-            findViewById(R.id.add_fab)
+        val addFab: com.google.android.material.floatingactionbutton.FloatingActionButton =
+            findViewById(R.id.addFab)
 
         //FAB버튼 누르면 다이얼로그 창이 뜸
-        add_fab.setOnClickListener {
+        addFab.setOnClickListener {
             val addDialog = AlertDialog.Builder(this)
-            addDialog.setIcon(R.drawable.fab_add) //다이얼로그 아이콘 사진 설정
+            addDialog.setIcon(R.drawable.camlist_add_40dp) //다이얼로그 아이콘 사진 설정
             addDialog.setTitle("CAM 등록") //다이얼로그 제목
             addDialog.setMessage("등록할 CAM의 이름을 입력해주세요") //다이얼로그 내용
 
@@ -51,10 +51,10 @@ class activity_camList : AppCompatActivity() {
     }
 
     //캠리스트 틀..?을 만들어서 이제 여기서는 아마 캠 등록하고 이름 정해주려고 이렇게 한듯..??
-    fun createFakeCamList(res_name: String, mycam: MyCam = MyCam()): MyCam {
+    fun createFakeCamList(resName: String, mycam: MyCam = MyCam()): MyCam {
 
         mycam.addCam(
-            Cam(name = res_name)
+            Cam(name = resName)
         )
 
         return mycam
@@ -63,10 +63,10 @@ class activity_camList : AppCompatActivity() {
     //여기서 이제 그 등록한걸걸 진짜로 item뷰를 list뷰에 하나하나씩 넣는거
     fun createCamList(mycam: MyCam) {
         val layoutInflater = LayoutInflater.from(this)
-        val container = findViewById<LinearLayout>(R.id.mycam_list_container)
+        val container = findViewById<LinearLayout>(R.id.mycamListContainer)
         for (i in 0 until mycam.camList.size) {
             val view = layoutInflater.inflate(R.layout.item_camlist, null)
-            val camNameView = view.findViewById<TextView>(R.id.cam_name)
+            val camNameView = view.findViewById<TextView>(R.id.camName)
             camNameView.setText(mycam.camList.get(i).name)
             addSetOnClickListener(view, container, camNameView)
             container.addView(view)
@@ -77,7 +77,7 @@ class activity_camList : AppCompatActivity() {
     fun addSetOnClickListener(view: View, container: LinearLayout, camNameView: TextView) {
 
         //톱니바퀴 아이콘을 누르면 삭제/이름 수정 할 수 있는 리스트 다이얼로그창 생성
-        val setting = view.findViewById<ImageView>(R.id.cam_setting)
+        val setting = view.findViewById<ImageView>(R.id.camSetting)
         setting.setOnClickListener {
             val items = arrayOf("삭제", "수정")
 
