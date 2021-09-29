@@ -1,37 +1,37 @@
 package com.capstone.bootacam
 
-
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.view.*
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 
-class activity_side_menu : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
+
+class storedvideo_activity : AppCompatActivity(),NavigationView.OnNavigationItemSelectedListener {
 
     lateinit var navigationView: NavigationView
     lateinit var drawerLayout: DrawerLayout
     lateinit var toolbar: Toolbar
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_side_menu)
+        setContentView(R.layout.activity_storedvideo)
 
         toolbar=findViewById(R.id.ToolbarInAppbar)
         drawerLayout = findViewById(R.id.SideMenu)
         navigationView = findViewById(R.id.NaviView)
-        navigationView.setNavigationItemSelectedListener(this@activity_side_menu)
+
+
+        navigationView.setNavigationItemSelectedListener(this)
 
         // 만든 툴바를 액션바로 설정 및 액션바 기본 셋팅
         setSupportActionBar(toolbar)
         supportActionBar!!.setDisplayHomeAsUpEnabled(false)
         supportActionBar?.setDisplayShowTitleEnabled(false)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
 
         // xml 파일에서 넣어놨던 header 선언
         val headerview: View = navigationView.getHeaderView(0);
@@ -44,6 +44,7 @@ class activity_side_menu : AppCompatActivity(),NavigationView.OnNavigationItemSe
 
         // 터지 영역 지정
         val touchArea: DrawerLayout=findViewById(R.id.SideMenu);
+
 
         //사이드 메뉴가 열려있는 상태일 때
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
@@ -59,6 +60,7 @@ class activity_side_menu : AppCompatActivity(),NavigationView.OnNavigationItemSe
                 true // or false
             }
         }
+
     }
 
 
@@ -76,12 +78,9 @@ class activity_side_menu : AppCompatActivity(),NavigationView.OnNavigationItemSe
         when(item.itemId) {
             // menu_tab 선택 시 사이드 메뉴 열림
             R.id.MenuTab -> {
-               drawerLayout.openDrawer(GravityCompat.END)
+                drawerLayout.openDrawer(GravityCompat.END)
             }
 
-            android.R.id.home -> {
-                finish()
-            }
         }
         return super.onOptionsItemSelected(item)
     }
