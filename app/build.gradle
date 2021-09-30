@@ -34,6 +34,8 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildToolsVersion '28.0.3' //qr코드 스캐너
 }
 
 dependencies {
@@ -58,9 +60,14 @@ dependencies {
     //구글 SDK 추가
     implementation platform('com.google.firebase:firebase-bom:28.4.0')
     implementation 'com.google.firebase:firebase-analytics-ktx'
-
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
+    //qr코드 생성할 때 쓸 Zxing 라이브러리 (SDK Version 24 이상 일 때 사용 가능)
+    implementation('com.journeyapps:zxing-android-embedded:4.2.0') { transitive = false }
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'com.google.zxing:core:3.3.0'
 }
 
 apply plugin: 'com.google.gms.google-services'
+
+
