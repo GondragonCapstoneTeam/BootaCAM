@@ -25,7 +25,7 @@ open class base_sidemenu_activity :AppCompatActivity(), NavigationView.OnNavigat
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_basics)
+
 
     }
 
