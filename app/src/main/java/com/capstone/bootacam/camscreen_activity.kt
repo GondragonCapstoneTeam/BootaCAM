@@ -25,7 +25,7 @@ import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 
 
-class ActivityCamScreen : AppCompatActivity() {
+class camscreen_activity : AppCompatActivity() {
     private var playerView: PlayerView? = null
     private var playWhenReady = true
     private var currentWindow = 0
@@ -119,7 +119,7 @@ class ActivityCamScreen : AppCompatActivity() {
             DefaultTrackSelector(AdaptiveTrackSelection.Factory(bandwidthMeter))
         if (player == null)
             player = ExoPlayerFactory.newSimpleInstance(this, trackSelector)
-        var uri: Uri = Uri.parse("file:///sdcard/Documents/today222.mp4")
+        var uri: Uri = Uri.parse("http://html5videoformatconverter.com/data/images/happyfit2.mp4")
 
         var mediaSource: ExtractorMediaSource = ExtractorMediaSource(
             uri,

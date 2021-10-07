@@ -1,28 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.capstone.bootacam">
-
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.capstone.bootacam"> <!-- Zxing 라이브러리 -->
+    <uses-sdk tools:overrideLibrary="com.google.zxing.client.android" />
+    <!-- 인터넷 사용 권한 설정 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 카메라 권한 설정 -->
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
+        android:name=".GlobalApplication"
         android:allowBackup="true"
+        android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BootaCAM">
-        <activity android:name=".keyhash">
+
+
+        <activity
+            android:name=".camscreen_activity"
+            android:configChanges="keyboardHidden|orientation|screenSize"></activity>
+
+        <activity
+            android:name=".camlist_activity"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+
+
         </activity>
 
-        <activity android:name=".ActivityCamScreen"
-            android:configChanges="keyboardHidden|orientation|screenSize">
-        </activity>
 
-        <activity android:name=".ActivityCamList"
-            android:configChanges="keyboardHidden|orientation|screenSize">
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="@string/kakao_app_key" />
+
+
+
+        <activity
+            android:name=".sidemenu_baseactivity"
+            android:label="@string/title_activity_sidemenu_baseactivity"
+            android:theme="@style/Theme.BootaCAM.NoActionBar" />
+        <activity android:name=".storedvideo_activity" />
+        <activity android:name=".camera_activity" />
+
+
+        <activity
+            android:name=".activity_login2"
+            android:exported="true" />
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="@string/kakao_app_key" />
+
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,7 +63,17 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MainActivity">
+        <activity android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="oauth"
+                    android:scheme="kakao0aea004f8054f823aa2223a37f2de4f9" />
+            </intent-filter>
         </activity>
     </application>
 

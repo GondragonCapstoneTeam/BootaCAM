@@ -10,7 +10,7 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 
-class ActivityCamList : AppCompatActivity() {
+class camlist_activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_camlist)
@@ -140,7 +140,7 @@ class ActivityCamList : AppCompatActivity() {
 
         //뷰를 클릭하면 카메라 화면으로 전환하는 클릭리스너
         view.setOnClickListener {
-            val camScreen = Intent(this, ActivityCamScreen::class.java)
+            val camScreen = Intent(this, camscreen_activity::class.java)
 
 
             startActivity(camScreen)
