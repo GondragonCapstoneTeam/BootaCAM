@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity_camList">
+    tools:context=".ActivityCamList">
 
     <TextView
         android:layout_width="match_parent"
@@ -22,11 +22,11 @@
 
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/addFab"
+            android:id="@+id/button_addfab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="270dp"
+            android:layout_gravity="center|bottom"
+            android:layout_marginBottom="10dp"
             android:backgroundTint="#FFDD87"
             android:src="@drawable/camlist_add_40dp"
             app:borderWidth="0dp" />
@@ -38,11 +38,12 @@
             android:scrollbars="vertical">
 
             <LinearLayout
-                android:id="@+id/mycamListContainer"
+                android:id="@+id/linear_camcontainer"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical" />
         </ScrollView>
+
     </FrameLayout>
 
 

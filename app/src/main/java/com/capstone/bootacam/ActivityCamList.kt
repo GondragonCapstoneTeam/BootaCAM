@@ -10,13 +10,13 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 
-class activity_camList : AppCompatActivity() {
+class ActivityCamList : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_camlist)
 
         val addFab: com.google.android.material.floatingactionbutton.FloatingActionButton =
-            findViewById(R.id.addFab)
+            findViewById(R.id.button_addfab)
 
         //FAB버튼 누르면 다이얼로그 창이 뜸
         addFab.setOnClickListener {
@@ -63,10 +63,10 @@ class activity_camList : AppCompatActivity() {
     //여기서 이제 그 등록한걸걸 진짜로 item뷰를 list뷰에 하나하나씩 넣는거
     fun createCamList(mycam: MyCam) {
         val layoutInflater = LayoutInflater.from(this)
-        val container = findViewById<LinearLayout>(R.id.mycamListContainer)
+        val container = findViewById<LinearLayout>(R.id.linear_camcontainer)
         for (i in 0 until mycam.camList.size) {
             val view = layoutInflater.inflate(R.layout.item_camlist, null)
-            val camNameView = view.findViewById<TextView>(R.id.camName)
+            val camNameView = view.findViewById<TextView>(R.id.textview_camname)
             camNameView.setText(mycam.camList.get(i).name)
             addSetOnClickListener(view, container, camNameView)
             container.addView(view)
@@ -77,7 +77,7 @@ class activity_camList : AppCompatActivity() {
     fun addSetOnClickListener(view: View, container: LinearLayout, camNameView: TextView) {
 
         //톱니바퀴 아이콘을 누르면 삭제/이름 수정 할 수 있는 리스트 다이얼로그창 생성
-        val setting = view.findViewById<ImageView>(R.id.camSetting)
+        val setting = view.findViewById<ImageView>(R.id.imageview_setting)
         setting.setOnClickListener {
             val items = arrayOf("삭제", "수정")
 
@@ -140,7 +140,9 @@ class activity_camList : AppCompatActivity() {
 
         //뷰를 클릭하면 카메라 화면으로 전환하는 클릭리스너
         view.setOnClickListener {
-            val camScreen = Intent(this, activity_camScreen::class.java)
+            val camScreen = Intent(this, ActivityCamScreen::class.java)
+
+
             startActivity(camScreen)
         }
     }
